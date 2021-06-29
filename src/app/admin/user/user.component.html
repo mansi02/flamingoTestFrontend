@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 mr-auto">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title d-flex justify-content-center">Edit Profile</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input type="text" class="form-control" placeholder="Username"
+                                                    value="{{user.username}}" id="username" formControlName="username">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input type="email" class="form-control" placeholder="Email"
+                                                    value="{{user.email}}" id="email" formControlName="email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" placeholder="first_name"
+                                                    value="{{user.first_name}}" id="first_name"
+                                                    formControlName="first_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Last Name"
+                                                    value="{{user.last_name}}" id="last_name"
+                                                    formControlName="last_name">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Upload Profile
+                                                    Image</label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input type="file" (change)="onFileChange($event)"
+                                                        id="profile_image" name="profile_image"
+                                                        formControlName="profile_image" class="form-control"
+                                                        style="width: 60%;" accept=".jpeg , .png , .jpg" required>
+                                                    <img [src]="profile_image">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="text-center"><button type="submit"
+                                            class="btn btn-primary btn-round mt-4">Update</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
